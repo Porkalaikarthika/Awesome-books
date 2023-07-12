@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
   
       books.push(newBook);
-      console.log(books);
+    //   console.log(books);
   
       displayBook(newBook);
   
@@ -80,16 +80,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
     function displayBook(book) {
       const bookElement = document.createElement('section');
-      bookElement.innerHTML = `<h3>${book.title}</h3> <h3>${book.author} </h3> <button id="rmvBtn">remove</button>`;
+      bookElement.innerHTML = `<h3>${book.title}</h3>
+       <h3>${book.author}</h3> 
+       <button id="rmvBtn">remove</button> 
+       <hr>
+       `;
+
       listElement.appendChild(bookElement);
       const removeBtn = bookElement.querySelector('#rmvBtn');
       removeBtn.addEventListener('click', function() {
-        removeBook(book);
+        removeBook(book,bookElement);
       });
     }
-    function removeBook(book) {
-        delete book.title;
-        delete book.author;
-     }
+
+    function removeBook(book,bookElement) {
+        const index = books.indexOf(book);
+        if (index !== -1) {
+          books.splice(index, 1);
+          console.log(books);
+          bookElement.remove();
+        }
+    }    
   });
   
