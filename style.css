@@ -13,19 +13,36 @@
     padding: 5%;
     display: flex;
     justify-content: space-between;  
-    align-items: center;
-      
+    align-items: center;      
 }
 
 .brown {
-    background-color: rgb(233, 189, 189);
+    background-color: rgb(243, 225, 225);
 }
 
 .white {
     background-color: aliceblue;
 }
 
-.flexSec button {
-    
+header {
+    text-align: center;
 }
 
+.form {    
+    display: flex;
+    flex-direction: column;    
+    text-align: center;
+    padding: 1%;
+    margin: 1% 25% 1% 25%;  
+}
+
+/* .btn  {
+    justify-items: end;
+    text-align: end;
+    padding: 1%;    
+} */
+
+input {
+    margin-bottom: 5%;
+    margin-top: 2%;
+}

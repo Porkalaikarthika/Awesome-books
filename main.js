@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () 
+{
   const title = document.getElementById('title');
   const author = document.getElementById('author');
   const addBtn = document.getElementById('addBtn');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function displayBook(book) {
     const bookElement = document.createElement('section');
-    const index = books.indexOf(book) % 2 === 0;
+    const index = books.indexOf(book);
     bookElement.classList.add('flexSec');
     bookElement.innerHTML = `
    <h3>"${book.title}" by ${book.author} </h3>    
@@ -69,4 +70,5 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('bookStore', bookjson);
 
   }
+
 });
