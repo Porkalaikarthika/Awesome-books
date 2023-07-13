@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#listElement {
+    border: 2px solid black;
+    margin: 5%;
+}
+
+.flexSec {    
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+      
+}
+
+.brown {
+    background-color: rgb(233, 189, 189);
+}
+
+.white {
+    background-color: aliceblue;
+}
+
+.flexSec button {
+    
+}
+
