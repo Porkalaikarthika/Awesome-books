@@ -14,16 +14,19 @@ document.addEventListener('DOMContentLoaded', function ()
       displayBook(books[i]);
     }
   }
+  class book {
+    constructor(tit,auth){
+    this.tit=tit;
+    this.auth=auth;
+    }
+  }
+
 
 
   addBtn.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent form submission
-
-    const newBook = {
-      title: title.value,
-      author: author.value
-    };
-
+    
+    const newBook=new book(title.value,author.value);
 
     books.push(newBook);
     //   console.log(books);
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function ()
     const index = books.indexOf(book);
     bookElement.classList.add('flexSec');
     bookElement.innerHTML = `
-   <h3>"${book.title}" by ${book.author} </h3>    
+   <h3>"${book.tit}" by ${book.auth} </h3>    
    <button id="rmvBtn">remove</button>    
    `;
 
