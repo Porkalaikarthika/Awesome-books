@@ -7,21 +7,58 @@ document.addEventListener('DOMContentLoaded', function ()
   let books = []; // Array to store books
   // const bookObj = JSON.parse(bookStore); 
   // localStorage.clear();
-  if (localStorage.getItem('bookStore')) {
-    books = JSON.parse(localStorage.getItem('bookStore'));
-    console.log(books);
-    for (i = 0; i < books.length; i++) {
-      displayBook(books[i]);
-    }
-  }
+ 
   class book {
     constructor(tit,auth){
     this.tit=tit;
     this.auth=auth;
     }
+
+    displayBook() {
+      const bookElement = document.createElement('section');
+      const index = books.indexOf(this);
+      bookElement.classList.add('flexSec');
+      bookElement.innerHTML = `
+     <h3>"${this.tit}" by ${this.auth} </h3>    
+     <button id="rmvBtn">remove</button>    
+     `; 
+     console.log(index); 
+      bookElement.classList.add(index % 2 === 0 ? 'brown' : 'white');
+  
+      listElement.appendChild(bookElement);
+      const removeBtn = bookElement.querySelector('#rmvBtn');
+      
+      removeBtn.addEventListener('click', ()=> {
+        this.removeBook(bookElement);
+      });
+      
+    }
+
+    removeBook(bookElement) {
+      const index = books.indexOf(this);
+      books.splice(index, 1);
+      console.log(books);
+      bookElement.remove();
+      this.save();  
+    }
+
+    save() {
+      const bookjson = JSON.stringify(books);
+      localStorage.setItem('bookStore', bookjson);
+  
+    }
+    
   }
 
-
+  if(localStorage.getItem('bookStore'))
+  {
+    books = JSON.parse(localStorage.getItem('bookStore'));
+    for( let i=0; i<books.length;i++)
+    {
+      const storebook = new book(books[i].tit,books[i].auth);
+      storebook.displayBook();      
+    }    
+  }
 
   addBtn.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent form submission
@@ -30,48 +67,12 @@ document.addEventListener('DOMContentLoaded', function ()
 
     books.push(newBook);
     //   console.log(books);
-    save();
+    newBook.save();
 
-    displayBook(newBook);
+    newBook.displayBook();
 
     title.value = ''; // Clear the input fields
     author.value = '';
-  });
-
-  function displayBook(book) {
-    const bookElement = document.createElement('section');
-    const index = books.indexOf(book);
-    bookElement.classList.add('flexSec');
-    bookElement.innerHTML = `
-   <h3>"${book.tit}" by ${book.auth} </h3>    
-   <button id="rmvBtn">remove</button>    
-   `;
-
-
-    bookElement.classList.add(index % 2 === 0 ? 'brown' : 'white');
-
-    listElement.appendChild(bookElement);
-    const removeBtn = bookElement.querySelector('#rmvBtn');
-    removeBtn.addEventListener('click', function () {
-      removeBook(book, bookElement);
-    });
-  }
-
-  function removeBook(book, bookElement) {
-    const index = books.indexOf(book);
-    books.splice(index, 1);
-    console.log(books);
-    bookElement.remove();
-    save();
-
-  }
-
-
-
-  function save() {
-    const bookjson = JSON.stringify(books);
-    localStorage.setItem('bookStore', bookjson);
-
-  }
+  });  
 
 });

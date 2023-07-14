@@ -10,7 +10,7 @@
 }
 
 .flexSec {    
-    padding: 5%;
+    padding: 1vw;
     display: flex;
     justify-content: space-between;  
     align-items: center;      
@@ -54,6 +54,11 @@ button {
     /* width: 8vw; */
     border-radius: 0.4rem;
     border: 1px solid lightslategray;
-    
+    cursor: pointer;      
+}
+
+button:hover {
+    background-color: lightslategray;
+    color: white;
 }
 
