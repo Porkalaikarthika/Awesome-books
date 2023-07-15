@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function ()
     this.auth=auth;
     }
 
-    displayBook() {
+    displayBook(index) {
       const bookElement = document.createElement('section');
-      const index = books.indexOf(this);
+      // const index = books.indexOf(this);
       bookElement.classList.add('flexSec');
       bookElement.innerHTML = `
      <h3>"${this.tit}" by ${this.auth} </h3>    
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function ()
       const removeBtn = bookElement.querySelector('#rmvBtn');
       
       removeBtn.addEventListener('click', ()=> {
-        this.removeBook(bookElement);
+        this.removeBook(index,bookElement);
       });
       
     }
 
-    removeBook(bookElement) {
-      const index = books.indexOf(this);
+    removeBook(index,bookElement) {
+      // const index = books.indexOf(this);
       books.splice(index, 1);
       console.log(books);
       bookElement.remove();
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function ()
     for( let i=0; i<books.length;i++)
     {
       const storebook = new book(books[i].tit,books[i].auth);
-      storebook.displayBook();      
+      storebook.displayBook(i);      
     }    
   }
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function ()
     //   console.log(books);
     newBook.save();
 
-    newBook.displayBook();
+    newBook.displayBook(books.length-1);
 
     title.value = ''; // Clear the input fields
     author.value = '';
