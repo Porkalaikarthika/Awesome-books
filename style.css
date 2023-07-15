@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,11 +9,11 @@
     margin: 5%;
 }
 
-.flexSec {    
+.flexSec {
     padding: 1vw;
     display: flex;
-    justify-content: space-between;  
-    align-items: center;      
+    justify-content: space-between;
+    align-items: center;
 }
 
 .brown {
@@ -28,33 +28,31 @@ header {
     text-align: center;
 }
 
-.form {    
+.form {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     text-align: center;
     padding: 1%;
     margin: 1% 25% 1% 25%;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
 }
 
 input {
-    
-    text-align: start;    
+    text-align: start;
     padding: 1vw 1.1vw 1vw 1.5vw;
     width: 35vw;
     border-radius: 0.55vw;
-    border: 1px solid black;    
+    border: 1px solid black;
     box-sizing: border-box;
-    margin: 1vw;    
+    margin: 1vw;
 }
 
 button {
-    padding: 0.8vw 1.11vw;
-    /* width: 8vw; */
-    border-radius: 0.4rem;
+    padding: 0.8vw 1.11vw;    
+    border-radius: 0.2rem;
     border: 1px solid lightslategray;
-    cursor: pointer;      
+    cursor: pointer;
 }
 
 button:hover {
@@ -62,3 +60,9 @@ button:hover {
     color: white;
 }
 
+
+.addBtn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1vw;
+}
