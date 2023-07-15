@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', function ()
   const author = document.getElementById('author');
   const addBtn = document.getElementById('addBtn');
   const listElement = document.getElementById('listElement');
-  let books = []; // Array to store books
-  // const bookObj = JSON.parse(bookStore); 
-  // localStorage.clear();
+  let books = []; 
  
   class book {
     constructor(tit,auth){
