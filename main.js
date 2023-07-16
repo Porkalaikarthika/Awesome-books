@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function ()
   const author = document.getElementById('author');
   const addBtn = document.getElementById('addBtn');
   const listElement = document.getElementById('listElement');
+  const addNew = document.getElementById('addNew');
+  const contact = document.getElementById('contact');
+  const btnList = document.getElementById('btn-list');
+  const btnaddNew = document.getElementById('btn-addNew');
+  const btnContact = document.getElementById('btn-contact');
   let books = []; 
  
   class book {
@@ -41,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function ()
     }
 
     save() {
-      const bookjson = JSON.stringify(books);
+      
       localStorage.setItem('bookStore', bookjson);
   
     }
@@ -71,6 +76,24 @@ document.addEventListener('DOMContentLoaded', function ()
 
     title.value = ''; // Clear the input fields
     author.value = '';
-  });  
+  });
+  
+  btnList.onclick = function (){
+    listElement.style.display="block";
+    addNew.style.display="none";
+    contact.style.display="none";
+  }
+
+  btnaddNew.onclick = function (){
+    listElement.style.display="none";
+    addNew.style.display="block";
+    contact.style.display="none";
+  }
+
+  btnContact.onclick = function (){
+    listElement.style.display="none";
+    addNew.style.display="none";
+    contact.style.display="block";
+  }
 
 });

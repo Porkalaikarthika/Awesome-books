@@ -7,12 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header><h1>Awesome books</h1></header>
+    <header>
+        <nav class="nav-bar">
+            <div>Awesome Books</div>
+            <div>
+                <ul>
+                    <li id="btn-list">list</li>
+                    <li id="btn-addNew">Add new</li>
+                    <li id="btn-contact">Contact</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main>
-        <div id="listElement">
+        <section class="main">        
+        <section id="listElement">            
 
-        </div>
-        <section class="form">
+        </section>
+        <section class="form" id="addNew">
             <form action="">
             <h2>Add a new book</h2>
             <input type="text" id="title" name="title" placeholder="Title"><br>
@@ -22,8 +34,22 @@
                       
             </form>
         </section>
-        <script src="main.js"></script>
+        <section class="Contact" id="contact">
+            <h1>Contact information</h1>
+            <h3>Do you have any questions or you just wanna say "Hello"?</h3>
+            <h3>You can reach out to us!</h3>
+            <ul>
+                <li>Our e-mail porkalaikarthika@gmail.com</li>
+                <li>Our phone number </li>
+                <li>Address</li>
+            </ul>
+        </section>
+        </section>
+       
     </main>
-    
+    <footer class="footer">
+        <a href="#">Copyrights owned by Porkalai karthika</a>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
