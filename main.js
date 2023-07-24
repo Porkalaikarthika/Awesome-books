@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () 
-{
   const title = document.getElementById('title');
   const author = document.getElementById('author');
   const addBtn = document.getElementById('addBtn');
@@ -10,7 +8,12 @@ document.addEventListener('DOMContentLoaded', function ()
   const btnaddNew = document.getElementById('btn-addNew');
   const btnContact = document.getElementById('btn-contact');
   let books = []; 
- 
+  document.addEventListener('DOMContentLoaded', function () 
+  {
+    listElement.style.display="none";
+    addNew.style.display="none";
+    contact.style.display="none";    
+  });
   class book {
     constructor(tit,auth){
     this.tit=tit;
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function ()
       // const index = books.indexOf(this);
       bookElement.classList.add('flexSec');
       bookElement.innerHTML = `
+      
      <h3>"${this.tit}" by ${this.auth} </h3>    
      <button id="rmvBtn">remove</button>    
      `; 
@@ -46,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function ()
     }
 
     save() {
-      
+      const bookjson = JSON.stringify(books);
       localStorage.setItem('bookStore', bookjson);
   
     }
@@ -79,21 +83,24 @@ document.addEventListener('DOMContentLoaded', function ()
   });
   
   btnList.onclick = function (){
+    document.getElementById('welcome').style.display="block";
     listElement.style.display="block";
     addNew.style.display="none";
     contact.style.display="none";
   }
 
   btnaddNew.onclick = function (){
+    document.getElementById('welcome').style.display="none";
     listElement.style.display="none";
     addNew.style.display="block";
     contact.style.display="none";
   }
 
   btnContact.onclick = function (){
+    document.getElementById('welcome').style.display="none";
     listElement.style.display="none";
     addNew.style.display="none";
     contact.style.display="block";
   }
 
-});
+
