@@ -116,11 +116,29 @@ ul li {
     
 }
 
-#contact {
+/* #contact {
    margin-top: 5vw;
     width: min(630px, 94%);
     margin-bottom: 5vw;
-}
+} */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust this value to center the content vertically based on your page height */
+  }
+  
+  .contact ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact li {
+    margin: 10px 0;
+  }
+  
 
 .footer {
     bottom: 0;
