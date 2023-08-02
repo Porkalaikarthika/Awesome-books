@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +14,7 @@ body {
 li:hover {
     color: rgb(18, 141, 230);
     cursor: pointer;
-    font-weight: 600;    
+    font-weight: 600;
     transition: all 0.1s ease-in-out;
 }
 
@@ -29,12 +30,8 @@ li:hover {
     align-items: center;
 }
 
-.brown {
+.flexSec:nth-child(odd) {
     background-color: rgb(243, 225, 225);
-}
-
-.white {
-    background-color: aliceblue;
 }
 
 header {
@@ -65,7 +62,7 @@ button {
     box-shadow: 4px 3px 2px #000;
     font-family: 'Caveat', cursive;
     font-size: 1.5rem;
-    padding: 0.1vw 0.9vw;    
+    padding: 0.1vw 0.9vw;
     border-radius: 0.2rem;
     border: 1px solid lightslategray;
     cursor: pointer;
@@ -84,15 +81,15 @@ button:hover {
     margin: 1vw;
 }
 
-.nav-bar ul {     
+.nav-bar ul {
     display: flex;
     gap: 1rem;
     align-items: center;
-    list-style: none;   
+    list-style: none;
 }
 
 ul li {
-    padding-right: 1rem;   
+    padding-right: 1rem;
 }
 
 .nav-bar {
@@ -101,7 +98,7 @@ ul li {
     padding: 0.5rem;
     border: 1px solid rgb(54, 51, 51);
     width: 100%;
-    position: fixed;   
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,9 +108,9 @@ ul li {
 
 .main {
     margin-top: 100px;
-    text-align:center;
+    text-align: center;
     margin-bottom: 100px;
-    
+
 }
 
 /* #contact {
@@ -127,18 +124,19 @@ ul li {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Adjust this value to center the content vertically based on your page height */
-  }
-  
-  .contact ul {
+    height: 100vh;
+    /* Adjust this value to center the content vertically based on your page height */
+}
+
+.contact ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .contact li {
+}
+
+.contact li {
     margin: 10px 0;
-  }
-  
+}
+
 
 .footer {
     bottom: 0;
@@ -146,7 +144,7 @@ ul li {
     border: 1px solid rgb(54, 51, 51);
     width: 100%;
     position: fixed;
-    text-align: left;    
+    text-align: left;
     align-items: center;
     z-index: 3;
     background-color: rgb(250, 248, 245);

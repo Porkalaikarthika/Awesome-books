@@ -30,8 +30,7 @@
      <button id="rmvBtn">remove</button>    
      `; 
      console.log(index); 
-      bookElement.classList.add(index % 2 === 0 ? 'brown' : 'white');
-  
+      
       listElement.appendChild(bookElement);
       const removeBtn = bookElement.querySelector('#rmvBtn');
       
